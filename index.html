@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>First HW on JS course!</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./images/icons-16.png"
+    />
+    <style>
+      body {
+        font-family: "Courier New", Courier, monospace;
+        background-color: goldenrod;
+        margin: 0;
+      }
+      h1 {
+        text-align: center;
+        font-size: 38px;
+        color: brown;
+      }
+      .description {
+        font-size: 20px;
+        font-weight: 600;
+        max-width: 1000px;
+      }
+      section {
+        margin: 20px;
+        padding: 20px;
+      }
+      .wrapper {
+        display: flex;
+        gap: 40px;
+      }
+
+      .task-header {
+        font-size: 18px;
+        margin: 8px 0;
+        font-weight: 600;
+      }
+      .task-list {
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        padding: 4px;
+        margin: 4px;
+        gap: 16px;
+      }
+
+      .task-wrapper {
+        border: 4px solid #000;
+        border-radius: 16px;
+        padding: 8px;
+        max-width: 1000px;
+      }
+
+      .task-item {
+        border: 2px solid #000;
+        border-radius: 8px;
+        padding: 12px 12px;
+      }
+
+      .task-description {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 14px;
+        margin-left: 24px;
+      }
+      .first-task-arg-field {
+        border-radius: 4px;
+        border: 1px solid;
+        background-color: transparent;
+        margin-top: 8px;
+        padding: 4px 8px;
+        font-size: 16px;
+        height: 24px;
+        outline: none;
+        width: 80px;
+        margin-top: 8px;
+      }
+      .second-task-arg-field {
+        border-radius: 4px;
+        border: 1px solid;
+        background-color: transparent;
+        margin-top: 8px;
+        padding: 4px 8px;
+        font-size: 16px;
+        height: 24px;
+        outline: none;
+        width: auto;
+        margin-top: 8px;
+      }
+
+      .getFirstTaskResult {
+        font-family: "Courier New", Courier, monospace;
+        font-size: 16px;
+        background-color: brown;
+        color: gold;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin: 0 auto;
+        padding: 8px 16px;
+      }
+      .getFirstTaskResult:hover {
+        background-color: rgb(76, 19, 19);
+      }
+      .tasc-form {
+        display: flex;
+        gap: 20px;
+        flex-direction: column;
+      }
+      .first-task-res-field {
+        background-color: transparent;
+        border-radius: 4px;
+        border: 2px solid;
+        margin-top: 8px;
+        padding: 4px 8px;
+        font-size: 16px;
+        height: 24px;
+        outline: none;
+        width: 400px;
+      }
+      .field-container {
+        display: flex;
+        gap: 20px;
+        align-items: flex-end;
+      }
+
+      .tasc-field-label {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Перша домашка по JS!</h1>
+    </header>
+    <section class="wrapper">
+      <div>
+        <img
+          src="./images/Coder-Transparent-Image.png"
+          alt="Кодер"
+          width="400"
+        />
+      </div>
+      <div class="content">
+        <p class="description">
+          На цій сторінці ви можете побачити результати роботи функцій, які
+          необхідно було оголосити за умовами домашнього завдання.
+        </p>
+        <div class="task-wrapper">
+          <ul class="task-list">
+            <li class="task-item">
+              <p class="task-header">Перше завдання:</p>
+              <p class="task-description">
+                Оголоси функцію makeTransaction, яка очікує два параметри,
+                значення яких будуть задаватися під час її виклику: <br />•
+                quantity — перший параметр, число, що містить кількість
+                замовлених дроїдів <br />• pricePerDroid — другий параметр,
+                число, що містить вартість одного дроїда. <br />Доповни код
+                функції так, щоб вона повертала рядок з повідомленням про
+                покупку ремонтних дроїдів: "You ordered &lt;quantity&gt; droids
+                worth &lt;totalPrice> credits!", де: <br />• &lt;quantity&gt; —
+                це кількість замовлених дроїдів <br />• &lt;totalPrice&gt; — це
+                загальна вартість замовлення, тобто вартість усіх замовлених
+                дроїдів
+              </p>
+              <form class="tasc-form">
+                <div class="field-container">
+                  <label class="tasc-field-label"
+                    >Введіть кількість дроїдів:
+                    <input
+                      class="first-task-arg-field"
+                      type="number"
+                      name="quantity"
+                      id="quantity"
+                  /></label>
+                  <label class="tasc-field-label"
+                    >Введіть ціну за одиницю:
+                    <input
+                      class="first-task-arg-field second-tasc"
+                      type="number"
+                      name="pricePerDroid"
+                      id="pricePerDroid"
+                  /></label>
+                </div>
+                <button
+                  type="button"
+                  id="first-task-res-button"
+                  class="getFirstTaskResult"
+                >
+                  &gt;&gt; Дивитись результат: &lt;&lt;
+                </button>
+                <label class="tasc-field-label"
+                  >Результат виконання функції:
+                  <input
+                    type="text"
+                    name="first-task-result-field"
+                    id="first-task-result-field"
+                    class="first-task-res-field"
+                /></label>
+              </form>
+            </li>
+            <li class="task-item">
+              <p class="task-header">Друге завдання:</p>
+              <p class="task-description">
+                Оголоси функцію getShippingMessage, яка очікує три параметри,
+                значення яких будуть задаватися під час її виклику: <br />•
+                country — перший параметр, рядок, що містить країну доставки
+                <br />• price — другий параметр, число, що містить загальну
+                вартість товару <br />• deliveryFee — третій параметр, число, що
+                містить вартість доставки товару <br />Доповни код функції так,
+                щоб вона повертала рядок з повідомленням про доставку товару в
+                країну користувача: "Shipping to &lt;country&gt; will cost
+                &lt;totalPrice&gt; credits", де: <br />• &lt;country&gt; — це
+                країни доставки <br />• &lt;totalPrice&gt; — це загальна
+                вартість замовлення, що включає вартість товару і його доставки
+              </p>
+              <form class="tasc-form">
+                <div class="field-container">
+                  <label class="tasc-field-label"
+                    >Введіть назву країни:
+                    <input
+                      class="second-task-arg-field"
+                      type="text"
+                      name="country"
+                      id="country"
+                  /></label>
+                  <label class="tasc-field-label"
+                    >Введіть вартість товару:
+                    <input
+                      class="second-task-arg-field"
+                      type="number"
+                      name="price"
+                      id="price"
+                  /></label>
+                  <label class="tasc-field-label"
+                    >Введіть вартість доставки:
+                    <input
+                      class="second-task-arg-field"
+                      type="number"
+                      name="deliveryFee"
+                      id="deliveryFee"
+                  /></label>
+                </div>
+                <button
+                  type="button"
+                  id="second-task-res-button"
+                  class="getFirstTaskResult"
+                >
+                  &gt;&gt; Дивитись результат: &lt;&lt;
+                </button>
+                <label class="tasc-field-label"
+                  >Результат виконання функції:
+                  <input
+                    type="text"
+                    name="second-task-result-field"
+                    id="second-task-result-field"
+                    class="first-task-res-field"
+                /></label>
+              </form>
+            </li>
+            <li class="task-item">
+              <p class="task-header">Третє завдання:</p>
+              <p class="task-description">
+                Оголоси функцію getElementWidth, яка очікує три параметри,
+                значення яких будуть задаватися під час її виклику: <br />•
+                content— перший параметр, ширина контенту <br />• padding —
+                другий параметр, значення горизонтального падінгу для кожної зі
+                сторін <br />• border — третій параметр, значення товщини
+                бордера для кожної зі сторін Значення всіх параметрів будуть
+                рядками формату Npx де N — це довільне число, ціле або дробове.
+                <br />Доповни код функції так, щоб вона повертала число —
+                загальну ширину елемента. При розрахунку загальної ширини
+                орієнтуйся на те, що значення box-sizing дорівнює border-box.
+              </p>
+              <form class="tasc-form">
+                <div class="field-container">
+                  <label class="tasc-field-label"
+                    >Введіть ширину контенту:
+                    <input
+                      class="second-task-arg-field"
+                      type="text"
+                      name="content"
+                      id="content"
+                  /></label>
+                  <label class="tasc-field-label"
+                    >Введіть ширину паддінга:
+                    <input
+                      class="second-task-arg-field"
+                      type="text"
+                      name="padding"
+                      id="padding"
+                  /></label>
+                  <label class="tasc-field-label"
+                    >Введіть товщину бордера:
+                    <input
+                      class="second-task-arg-field"
+                      type="text"
+                      name="border"
+                      id="border"
+                  /></label>
+                </div>
+                <button
+                  type="button"
+                  id="third-task-res-button"
+                  class="getFirstTaskResult"
+                >
+                  &gt;&gt; Дивитись результат: &lt;&lt;
+                </button>
+                <label class="tasc-field-label"
+                  >Результат виконання функції:
+                  <input
+                    type="text"
+                    name="third-task-result-field"
+                    id="third-task-result-field"
+                    class="first-task-res-field"
+                /></label>
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <script src="./js/task-1.js"></script>
+    <script src="./js/task-2.js"></script>
+    <script src="./js/task-3.js"></script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
