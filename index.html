@@ -156,17 +156,9 @@
             <li class="task-item">
               <p class="task-header">Перше завдання:</p>
               <p class="task-description">
-                Оголоси функцію makeTransaction, яка очікує два параметри,
-                значення яких будуть задаватися під час її виклику: <br />•
-                quantity — перший параметр, число, що містить кількість
-                замовлених дроїдів <br />• pricePerDroid — другий параметр,
-                число, що містить вартість одного дроїда. <br />Доповни код
-                функції так, щоб вона повертала рядок з повідомленням про
-                покупку ремонтних дроїдів: "You ordered &lt;quantity&gt; droids
-                worth &lt;totalPrice> credits!", де: <br />• &lt;quantity&gt; —
-                це кількість замовлених дроїдів <br />• &lt;totalPrice&gt; — це
-                загальна вартість замовлення, тобто вартість усіх замовлених
-                дроїдів
+                Оголоси функцію <span>makeTransaction(quantity, pricePerDroid, customerCredits)</span>, яка складає та повертає повідомлення про купівлю ремонтних дроїдів. Вона оголошує три параметри, значення яких будуть задаватися під час її виклику:<br>
+                quantity — кількість замовлених дроїдів <br><span>pricePerDroid</span> — ціна одного дроїда <br><span>customerCredits</span> — сума коштів на рахунку клієнта<br>
+                Доповни функцію таким чином:<br>Оголоси змінну для зберігання загальної суми замовлення (загальна вартість усіх замовлених дроїдів) і задай їй вираз розрахунку цієї суми. Додай перевірку, чи зможе клієнт оплатити замовлення: якщо сума до сплати перевищує кількість кредитів на рахунку клієнта, функція має повертати рядок <span><span>"Insufficient funds!"</span> в іншому випадку функція має повертати рядок <code>"You ordered &lt;quantity&gt; droids worth &lt;totalPrice&gt; credits!"</code>, де &lt;quantity&gt; це кількість замовлених дроїдів, а &lt;totalPrice&gt; це їх загальна вартість.
               </p>
               <form class="tasc-form">
                 <div class="field-container">
@@ -185,6 +177,14 @@
                       type="number"
                       name="pricePerDroid"
                       id="pricePerDroid"
+                  /></label>
+                  <label class="tasc-field-label">
+                    Введіть суму коштів на рахунку:
+                    <input
+                      class="first-task-arg-field second-tasc"
+                      type="number"
+                      name="customerCreditsCount"
+                      id="customerCreditsCount"
                   /></label>
                 </div>
                 <button
@@ -285,6 +285,64 @@
                       class="second-task-arg-field"
                       type="text"
                       name="content"
+                      
+                  /></label>
+                  <label class="tasc-field-label"
+                    >Введіть ширину паддінга:
+                    <input
+                      class="second-task-arg-field"
+                      type="text"
+                      name="padding"
+                      
+                  /></label>
+                  <label class="tasc-field-label"
+                    >Введіть товщину бордера:
+                    <input
+                      class="second-task-arg-field"
+                      type="text"
+                      name="border"
+                      
+                  /></label>
+                </div>
+                <button
+                  type="button"
+                  id="four-task-res-button"
+                  class="getFirstTaskResult"
+                >
+                  &gt;&gt; Дивитись результат: &lt;&lt;
+                </button>
+                <label class="tasc-field-label"
+                  >Результат виконання функції:
+                  <input
+                    type="text"
+                    name="four-task-result-field"
+                    id="four-task-result-field"
+                    class="first-task-res-field"
+                /></label>
+              </form>
+            </li>
+            <li class="task-item">
+              <p class="task-header">Четверте завдання:</p>
+              <p class="task-description">
+                Оголоси функцію getElementWidth, яка очікує три параметри,
+                значення яких будуть задаватися під час її виклику: <br />•
+                content— перший параметр, ширина контенту <br />• padding —
+                другий параметр, значення горизонтального падінгу для кожної зі
+                сторін <br />• border — третій параметр, значення товщини
+                бордера для кожної зі сторін Значення всіх параметрів будуть
+                рядками формату Npx де N — це довільне число, ціле або дробове.
+                <br />Доповни код функції так, щоб вона повертала число —
+                загальну ширину елемента. При розрахунку загальної ширини
+                орієнтуйся на те, що значення box-sizing дорівнює border-box.
+              </p>
+              <form class="tasc-form">
+                <div class="field-container">
+                  <label class="tasc-field-label"
+                    >Введіть ширину контенту:
+                    <input
+                      class="second-task-arg-field"
+                      type="text"
+                      name="content"
                       id="content"
                   /></label>
                   <label class="tasc-field-label"
@@ -328,6 +386,7 @@
     <script src="./js/task-1.js"></script>
     <script src="./js/task-2.js"></script>
     <script src="./js/task-3.js"></script>
+    <script src="./js/task-4.js"></script>
     <script src="./js/script.js"></script>
   </body>
 </html>
