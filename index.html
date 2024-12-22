@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>First HW on JS course!</title>
+    <title>Second HW on JS course!</title>
     <link
       rel="icon"
       type="image/png"
@@ -16,20 +16,24 @@
         background-color: goldenrod;
         margin: 0;
       }
+
       h1 {
         text-align: center;
         font-size: 38px;
         color: brown;
       }
+
       .description {
         font-size: 20px;
         font-weight: 600;
         max-width: 1000px;
       }
+
       section {
         margin: 20px;
         padding: 20px;
       }
+
       .wrapper {
         display: flex;
         gap: 40px;
@@ -40,6 +44,7 @@
         margin: 8px 0;
         font-weight: 600;
       }
+
       .task-list {
         display: flex;
         flex-direction: column;
@@ -67,6 +72,7 @@
         font-size: 14px;
         margin-left: 24px;
       }
+
       .first-task-arg-field {
         border-radius: 4px;
         border: 1px solid;
@@ -77,7 +83,9 @@
         height: 24px;
         outline: none;
         width: 80px;
-        margin-top: 8px;
+        display: block;
+        margin: 0 auto;
+        margin-top: 10px;
       }
       .second-task-arg-field {
         border-radius: 4px;
@@ -92,7 +100,7 @@
         margin-top: 8px;
       }
 
-      .getFirstTaskResult {
+      .get-first-task-result {
         font-family: "Courier New", Courier, monospace;
         font-size: 16px;
         background-color: brown;
@@ -103,7 +111,7 @@
         margin: 0 auto;
         padding: 8px 16px;
       }
-      .getFirstTaskResult:hover {
+      .get-first-task-result:hover {
         background-color: rgb(76, 19, 19);
       }
       .tasc-form {
@@ -126,11 +134,23 @@
         display: flex;
         gap: 20px;
         align-items: flex-end;
+        justify-content: center;
       }
 
       .tasc-field-label {
         font-family: Verdana, Geneva, Tahoma, sans-serif;
         text-align: center;
+        display: block;
+      }
+
+      .width-large {
+        width: 500px;
+        display: block;
+        align-items: center;
+      }
+
+      .width-small {
+        width: 100px;
       }
     </style>
   </head>
@@ -156,9 +176,23 @@
             <li class="task-item">
               <p class="task-header">Перше завдання:</p>
               <p class="task-description">
-                Оголоси функцію <span>makeTransaction(quantity, pricePerDroid, customerCredits)</span>, яка складає та повертає повідомлення про купівлю ремонтних дроїдів. Вона оголошує три параметри, значення яких будуть задаватися під час її виклику:<br>
-                quantity — кількість замовлених дроїдів <br><span>pricePerDroid</span> — ціна одного дроїда <br><span>customerCredits</span> — сума коштів на рахунку клієнта<br>
-                Доповни функцію таким чином:<br>Оголоси змінну для зберігання загальної суми замовлення (загальна вартість усіх замовлених дроїдів) і задай їй вираз розрахунку цієї суми. Додай перевірку, чи зможе клієнт оплатити замовлення: якщо сума до сплати перевищує кількість кредитів на рахунку клієнта, функція має повертати рядок <span><span>"Insufficient funds!"</span> в іншому випадку функція має повертати рядок <code>"You ordered &lt;quantity&gt; droids worth &lt;totalPrice&gt; credits!"</code>, де &lt;quantity&gt; це кількість замовлених дроїдів, а &lt;totalPrice&gt; це їх загальна вартість.
+                Оголоси функцію makeTransaction(quantity, pricePerDroid,
+                customerCredits), яка складає та повертає повідомлення про
+                купівлю ремонтних дроїдів. Вона оголошує три параметри, значення
+                яких будуть задаватися під час її виклику:<br />
+                • quantity — кількість замовлених дроїдів <br />• pricePerDroid
+                — ціна одного дроїда <br />• customerCredits — сума коштів на
+                рахунку клієнта<br />
+                Доповни функцію таким чином:<br />Оголоси змінну для зберігання
+                загальної суми замовлення (загальна вартість усіх замовлених
+                дроїдів) і задай їй вираз розрахунку цієї суми. Додай перевірку,
+                чи зможе клієнт оплатити замовлення: якщо сума до сплати
+                перевищує кількість кредитів на рахунку клієнта, функція має
+                повертати рядок "Insufficient funds!" в іншому випадку функція
+                має повертати рядок "You ordered &lt;quantity&gt; droids worth
+                &lt;totalPrice&gt; credits!", де &lt;quantity&gt; це кількість
+                замовлених дроїдів, а &lt;totalPrice&gt; це їх загальна
+                вартість.
               </p>
               <form class="tasc-form">
                 <div class="field-container">
@@ -173,7 +207,7 @@
                   <label class="tasc-field-label"
                     >Введіть ціну за одиницю:
                     <input
-                      class="first-task-arg-field second-tasc"
+                      class="first-task-arg-field second-tasc-arg-field"
                       type="number"
                       name="pricePerDroid"
                       id="pricePerDroid"
@@ -190,7 +224,7 @@
                 <button
                   type="button"
                   id="first-task-res-button"
-                  class="getFirstTaskResult"
+                  class="get-first-task-result"
                 >
                   &gt;&gt; Дивитись результат: &lt;&lt;
                 </button>
@@ -207,49 +241,41 @@
             <li class="task-item">
               <p class="task-header">Друге завдання:</p>
               <p class="task-description">
-                Оголоси функцію getShippingMessage, яка очікує три параметри,
-                значення яких будуть задаватися під час її виклику: <br />•
-                country — перший параметр, рядок, що містить країну доставки
-                <br />• price — другий параметр, число, що містить загальну
-                вартість товару <br />• deliveryFee — третій параметр, число, що
-                містить вартість доставки товару <br />Доповни код функції так,
-                щоб вона повертала рядок з повідомленням про доставку товару в
-                країну користувача: "Shipping to &lt;country&gt; will cost
-                &lt;totalPrice&gt; credits", де: <br />• &lt;country&gt; — це
-                країни доставки <br />• &lt;totalPrice&gt; — це загальна
-                вартість замовлення, що включає вартість товару і його доставки
+                Оголоси функцію formatMessage(message, maxLength), яка приймає
+                рядок (параметр message) та перевіряє його довжину відповідно до
+                заданої максимальної довжини (параметр maxLength). Доповни код
+                функції таким чином, що:
+                <br />• Якщо довжина рядка дорівнює або менша за maxLength, то
+                функція повертає початковий рядок без змін. <br />• Якщо довжина
+                перевищує maxLength, то функція обрізає рядок до maxLength
+                символів, додає трикрапку "..." в кінці та повертає обрізану
+                версію. <br />Візьми код нижче і встав після оголошення своєї
+                функції для перевірки коректності її роботи. У консоль будуть
+                виведені результати її роботи.
               </p>
               <form class="tasc-form">
                 <div class="field-container">
                   <label class="tasc-field-label"
-                    >Введіть назву країни:
+                    >Введіть повідомлення (message):
                     <input
-                      class="second-task-arg-field"
+                      class="second-task-arg-field width-large"
                       type="text"
                       name="country"
                       id="country"
                   /></label>
                   <label class="tasc-field-label"
-                    >Введіть вартість товару:
+                    >Введіть довжину рядка:
                     <input
-                      class="second-task-arg-field"
+                      class="second-task-arg-field width-small"
                       type="number"
                       name="price"
                       id="price"
-                  /></label>
-                  <label class="tasc-field-label"
-                    >Введіть вартість доставки:
-                    <input
-                      class="second-task-arg-field"
-                      type="number"
-                      name="deliveryFee"
-                      id="deliveryFee"
                   /></label>
                 </div>
                 <button
                   type="button"
                   id="second-task-res-button"
-                  class="getFirstTaskResult"
+                  class="get-first-task-result"
                 >
                   &gt;&gt; Дивитись результат: &lt;&lt;
                 </button>
@@ -266,106 +292,32 @@
             <li class="task-item">
               <p class="task-header">Третє завдання:</p>
               <p class="task-description">
-                Оголоси функцію getElementWidth, яка очікує три параметри,
-                значення яких будуть задаватися під час її виклику: <br />•
-                content— перший параметр, ширина контенту <br />• padding —
-                другий параметр, значення горизонтального падінгу для кожної зі
-                сторін <br />• border — третій параметр, значення товщини
-                бордера для кожної зі сторін Значення всіх параметрів будуть
-                рядками формату Npx де N — це довільне число, ціле або дробове.
-                <br />Доповни код функції так, щоб вона повертала число —
-                загальну ширину елемента. При розрахунку загальної ширини
-                орієнтуйся на те, що значення box-sizing дорівнює border-box.
+                Функція checkForSpam(message) приймає рядок (параметр message),
+                перевіряє його на вміст заборонених слів spam і sale, і повертає
+                результат перевірки. Слова в рядку параметра message можуть бути
+                в довільному регістрі, наприклад SPAM або sAlE. <br />Доповни
+                код функції таким чином, що: <br />Якщо знайдено заборонене
+                слово (spam або sale), то функція повертає буль true <br />Якщо
+                в рядку відсутні заборонені слова, функція повертає буль false
+                <br />Візьми код нижче і встав після оголошення своєї функції
+                для перевірки коректності її роботи. У консоль будуть виведені
+                результати її роботи.
               </p>
               <form class="tasc-form">
                 <div class="field-container">
                   <label class="tasc-field-label"
-                    >Введіть ширину контенту:
+                    >Введіть повідомлення:
                     <input
-                      class="second-task-arg-field"
+                      class="second-task-arg-field width-large"
                       type="text"
-                      name="content"
-                      
-                  /></label>
-                  <label class="tasc-field-label"
-                    >Введіть ширину паддінга:
-                    <input
-                      class="second-task-arg-field"
-                      type="text"
-                      name="padding"
-                      
-                  /></label>
-                  <label class="tasc-field-label"
-                    >Введіть товщину бордера:
-                    <input
-                      class="second-task-arg-field"
-                      type="text"
-                      name="border"
-                      
-                  /></label>
-                </div>
-                <button
-                  type="button"
-                  id="four-task-res-button"
-                  class="getFirstTaskResult"
-                >
-                  &gt;&gt; Дивитись результат: &lt;&lt;
-                </button>
-                <label class="tasc-field-label"
-                  >Результат виконання функції:
-                  <input
-                    type="text"
-                    name="four-task-result-field"
-                    id="four-task-result-field"
-                    class="first-task-res-field"
-                /></label>
-              </form>
-            </li>
-            <li class="task-item">
-              <p class="task-header">Четверте завдання:</p>
-              <p class="task-description">
-                Оголоси функцію getElementWidth, яка очікує три параметри,
-                значення яких будуть задаватися під час її виклику: <br />•
-                content— перший параметр, ширина контенту <br />• padding —
-                другий параметр, значення горизонтального падінгу для кожної зі
-                сторін <br />• border — третій параметр, значення товщини
-                бордера для кожної зі сторін Значення всіх параметрів будуть
-                рядками формату Npx де N — це довільне число, ціле або дробове.
-                <br />Доповни код функції так, щоб вона повертала число —
-                загальну ширину елемента. При розрахунку загальної ширини
-                орієнтуйся на те, що значення box-sizing дорівнює border-box.
-              </p>
-              <form class="tasc-form">
-                <div class="field-container">
-                  <label class="tasc-field-label"
-                    >Введіть ширину контенту:
-                    <input
-                      class="second-task-arg-field"
-                      type="text"
-                      name="content"
-                      id="content"
-                  /></label>
-                  <label class="tasc-field-label"
-                    >Введіть ширину паддінга:
-                    <input
-                      class="second-task-arg-field"
-                      type="text"
-                      name="padding"
-                      id="padding"
-                  /></label>
-                  <label class="tasc-field-label"
-                    >Введіть товщину бордера:
-                    <input
-                      class="second-task-arg-field"
-                      type="text"
-                      name="border"
-                      id="border"
+                      name="third-tasc-message"
+                      id="third-tasc-message"
                   /></label>
                 </div>
                 <button
                   type="button"
                   id="third-task-res-button"
-                  class="getFirstTaskResult"
+                  class="get-first-task-result"
                 >
                   &gt;&gt; Дивитись результат: &lt;&lt;
                 </button>
@@ -375,6 +327,54 @@
                     type="text"
                     name="third-task-result-field"
                     id="third-task-result-field"
+                    class="first-task-res-field"
+                /></label>
+              </form>
+            </li>
+            <li class="task-item">
+              <p class="task-header">Четверте завдання:</p>
+              <p class="task-description">
+                Оголоси функцію getShippingCost(country), яка повинна перевіряти
+                можливість доставки товару в країну користувача (параметр
+                country) і повертати повідомлення про результат. Обов'язково
+                використовуй інструкцію switch. Формат рядка, що повертається
+                "Shipping to &lt;country&gt; will cost &lt;price&gt; credits",
+                де замість &lt;country&gt; і &lt;price&gt; необхідно підставити
+                відповідні значення. Список країн і вартість доставки:<br />
+
+                • China — 100 кредитів<br />
+                • Chile — 250 кредитів<br />
+                • Australia — 170 кредитів<br />
+                • Jamaica — 120 кредитів<br />
+                Зі списку видно, що доставка можлива не скрізь. Якщо зазначена
+                країна відсутня у списку, то функція повинна повернути рядок
+                "Sorry, there is no delivery to your country".
+              </p>
+              <form class="tasc-form">
+                <div class="field-container">
+                  <label class="tasc-field-label"
+                    >Введіть назву країни:
+                    <input
+                      class="second-task-arg-field width-large"
+                      type="text"
+                      name="four-input-label"
+                      id="four-input-label"
+                    />
+                  </label>
+                </div>
+                <button
+                  type="button"
+                  id="four-task-res-button"
+                  class="get-first-task-result"
+                >
+                  &gt;&gt; Дивитись результат: &lt;&lt;
+                </button>
+                <label class="tasc-field-label"
+                  >Результат виконання функції:
+                  <input
+                    type="text"
+                    name="four-task-result-field"
+                    id="four-task-result-field"
                     class="first-task-res-field"
                 /></label>
               </form>
